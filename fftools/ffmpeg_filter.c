@@ -2351,6 +2351,7 @@ finish:
         nb_frames_dup = atomic_fetch_add(&ofilter->nb_frames_dup,
                                          *nb_frames - (*nb_frames_prev && fps->last_dropped) - (*nb_frames > *nb_frames_prev));
         av_log(ofp, AV_LOG_VERBOSE, "*** %"PRId64" dup!\n", *nb_frames - 1);
+        av_log(ofp, AV_LOG_INFO, "Duplicate frame detected at frame number: %"PRId64"\n", fps->frame_number);
         if (nb_frames_dup > fps->dup_warning) {
             av_log(ofp, AV_LOG_WARNING, "More than %"PRIu64" frames duplicated\n", fps->dup_warning);
             fps->dup_warning *= 10;
