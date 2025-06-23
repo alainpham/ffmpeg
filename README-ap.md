@@ -1,6 +1,6 @@
 # Compile ffmpeg with decklink
 
-- Install decklink driver driver version 14+ and download sdk version 12.+
+- Install decklink driver driver version 12+ and download sdk version 12.+
 
 https://www.blackmagicdesign.com/support/family/capture-and-playback
 
@@ -27,8 +27,8 @@ apt install -y wget curl unzip
 
 cd
 
-wget http://192.168.8.100:8787/blackmagic/Blackmagic_DeckLink_SDK_12.9.zip
-wget http://192.168.8.100:8787/blackmagic/Blackmagic_Desktop_Video_Linux_12.9.tar
+wget http://192.168.8.100:28000/blackmagic/Blackmagic_DeckLink_SDK_12.9.zip
+wget http://192.168.8.100:28000/blackmagic/Blackmagic_Desktop_Video_Linux_12.9.tar
 
 tar xvf Blackmagic_Desktop_Video_Linux_12.9.tar
 
