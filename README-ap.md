@@ -1,6 +1,7 @@
 # Compile ffmpeg with decklink
 
 - Install decklink driver driver version 12+ and download sdk version 12.+
+- works on ubuntu:noble and debian:bookworm
 
 https://www.blackmagicdesign.com/support/family/capture-and-playback
 
@@ -13,7 +14,7 @@ docker run --name bmg -e LANG=C.UTF-8 -dit debian:bookworm
 ```
 
 ```sh
-
+# if debian
 cat <<EOF > /etc/apt/sources.list
 deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
 deb http://deb.debian.org/debian-security/ bookworm-security main contrib non-free non-free-firmware
@@ -21,6 +22,7 @@ deb http://deb.debian.org/debian bookworm-updates main contrib non-free non-free
 EOF
 
 rm /etc/apt/sources.list.d/debian.sources
+# end if debian
 
 apt update -y && apt upgrade -y
 apt install -y wget curl unzip
