@@ -8,8 +8,8 @@ RUN apt update -y && \
     apt install -y \
                 libgl1 \
                 dkms \
-                linux-headers-$(uname -r)
-
+                linux-headers-generic
+                
 RUN wget http://192.168.8.100:28000/blackmagic/Blackmagic_DeckLink_SDK_12.9.zip && \
     wget http://192.168.8.100:28000/blackmagic/Blackmagic_Desktop_Video_Linux_12.9.tar && \
     tar xvf Blackmagic_Desktop_Video_Linux_12.9.tar && \
