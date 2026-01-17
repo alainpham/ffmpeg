@@ -20,23 +20,35 @@ RUN mkdir -p ~/ffmpeg_sources ~/bin && \
     cp -r Blackmagic\ DeckLink\ SDK\ */Linux/ ~/ffmpeg_sources/BMD_SDK
 
 RUN apt -y install \
-    autoconf \
-    automake \
-    build-essential \
-    cmake \
-    git-core \
-    libass-dev \
-    libfreetype6-dev \
-    libtool \
-    libvorbis-dev \
-    pkg-config \
-    texinfo \
-    wget \
-    zlib1g-dev
+  autoconf \
+  automake \
+  build-essential \
+  cmake \
+  git-core \
+  libass-dev \
+  libfreetype6-dev \
+  libgnutls28-dev \
+  libmp3lame-dev \
+  libsdl2-dev \
+  libtool \
+  libva-dev \
+  libvdpau-dev \
+  libvorbis-dev \
+  libxcb1-dev \
+  libxcb-shm0-dev \
+  libxcb-xfixes0-dev \
+  meson \
+  ninja-build \
+  pkg-config \
+  texinfo \
+  wget \
+  yasm \
+  zlib1g-dev
 
 RUN apt -y install \
   nasm yasm libx264-dev libx265-dev libnuma-dev libvpx-dev \
-  libfdk-aac-dev libmp3lame-dev libopus-dev libgpac-dev libsdl1.2-dev libtheora-dev libva-dev libvdpau-dev libxcb1-dev libasound2-dev libxcb-shm0-dev libxcb-xfixes0-dev texi2html
+  libfdk-aac-dev libmp3lame-dev libopus-dev libgpac-dev libsdl1.2-dev \
+  libasound2-dev texi2html
 
 RUN cd ~/ffmpeg_sources && \
     wget https://github.com/alainpham/FFmpeg/archive/refs/heads/7.1.1-ap.zip && \
