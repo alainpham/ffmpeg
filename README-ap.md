@@ -58,7 +58,7 @@ sudo apt-get update -qq && sudo apt-get -y install \
   zlib1g-dev
 sudo apt-get -y install \
   nasm yasm libx264-dev libx265-dev libnuma-dev libvpx-dev \
-  libfdk-aac-dev libmp3lame-dev libopus-dev libgpac-dev libsdl1.2-dev libtheora-dev libva-dev libvdpau-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev texi2html nvidia-cuda-toolkit
+  libfdk-aac-dev libmp3lame-dev libopus-dev libgpac-dev libsdl1.2-dev libtheora-dev libva-dev libvdpau-dev libxcb1-dev libasound2-dev libxcb-shm0-dev libxcb-xfixes0-dev texi2html nvidia-cuda-toolkit
 
 echo "Installing the nVidia NVENC SDK."
 cd ~/ffmpeg_sources
@@ -96,6 +96,7 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
   --enable-libx264 \
   --enable-libx265 \
   --enable-nonfree \
+  --enable-libpulse \
   --enable-nvenc \
   --enable-decklink  \
   --enable-ffplay
