@@ -11,9 +11,9 @@ RUN apt update -y && \
                 linux-headers-generic
 
 RUN wget http://192.168.8.100:28000/blackmagic/Blackmagic_DeckLink_SDK_12.9.zip && \
-    wget http://192.168.8.100:28000/blackmagic/Blackmagic_Desktop_Video_Linux_12.9.tar && \
-    tar xvf Blackmagic_Desktop_Video_Linux_12.9.tar && \
-    apt install -y /root/Blackmagic_Desktop_Video_Linux_12.9/deb/x86_64/desktopvideo_12.9a3_amd64.deb && \
+    wget http://192.168.8.100:28000/blackmagic/Blackmagic_Desktop_Video_Linux_12.9-patched.tar && \
+    tar xvf Blackmagic_Desktop_Video_Linux_12.9-patched.tar && \
+    dpkg -i /root/Blackmagic_Desktop_Video_Linux_12.9/deb/x86_64/desktopvideo_12.9a3_amd64.deb && apt -f install && \
     unzip Blackmagic_DeckLink_SDK_*.zip
 
 RUN mkdir -p ~/ffmpeg_sources ~/bin && \
@@ -62,7 +62,7 @@ RUN cd ~/ffmpeg_sources && \
         --extra-libs="-lpthread -lm" \
         --bindir="$HOME/bin" \
         --enable-gpl \
-        --enable-gnutls \
+        \
         \
         --enable-libass \
         --enable-libfdk-aac \
