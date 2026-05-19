@@ -10,7 +10,7 @@ docker container
 
 ```sh
 docker run --name bmg -e LANG=C.UTF-8 -dit debian:bookworm 
-docker run --name bmg -e LANG=C.UTF-8 -dit ubuntu:noble
+docker run --name bmg -e LANG=C.UTF-8 -dit ubuntu:resolute
 ```
 
 ```sh
@@ -58,7 +58,7 @@ sudo apt-get update -qq && sudo apt-get -y install \
   zlib1g-dev
 sudo apt-get -y install \
   nasm yasm libx264-dev libx265-dev libnuma-dev libvpx-dev \
-  libfdk-aac-dev libmp3lame-dev libopus-dev libgpac-dev libsdl1.2-dev libtheora-dev libva-dev libvdpau-dev libxcb1-dev libasound2-dev libxcb-shm0-dev libxcb-xfixes0-dev texi2html nvidia-cuda-toolkit
+  libfdk-aac-dev libmp3lame-dev libopus-dev libsdl1.2-dev libtheora-dev libva-dev libvdpau-dev libxcb1-dev libasound2-dev libxcb-shm0-dev libxcb-xfixes0-dev texi2html nvidia-cuda-toolkit
 
 echo "Installing the nVidia NVENC SDK."
 cd ~/ffmpeg_sources
@@ -111,7 +111,11 @@ copy to server
 ```sh
 export distrib=ubuntu
 
-scp ffmpeg  apham@192.168.8.100:/home/apham/apps/static/data/ffmpeg/$distrib
-scp ffprobe apham@192.168.8.100:/home/apham/apps/static/data/ffmpeg/$distrib
-scp ffplay  apham@192.168.8.100:/home/apham/apps/static/data/ffmpeg/$distrib
+scp ffmpeg  user@192.168.8.100:/home/user/apps/static/data/ffmpeg/
+scp ffprobe user@192.168.8.100:/home/user/apps/static/data/ffmpeg/
+scp ffplay  user@192.168.8.100:/home/user/apps/static/data/ffmpeg/
+
+scp ffmpeg  user@192.168.8.100:/home/user/apps/static/data/ffmpeg/$distrib
+scp ffprobe user@192.168.8.100:/home/user/apps/static/data/ffmpeg/$distrib
+scp ffplay  user@192.168.8.100:/home/user/apps/static/data/ffmpeg/$distrib
 ```
